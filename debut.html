@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Undangan Debut Streaming</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffffff,#d9d9d9,#808080);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.container{
+width:100%;
+max-width:400px;
+}
+
+.box{
+background:#ffffff;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation:fade 1s ease;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+color:#111;
+margin-bottom:15px;
+}
+
+p{
+color:#444;
+margin:10px 0;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:15px;
+border:2px solid #999;
+outline:none;
+font-size:16px;
+margin:15px 0;
+}
+
+button{
+border:none;
+background:#111;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#555;
+transform:scale(1.05);
+}
+
+#undangan{
+display:none;
+}
+
+.nama{
+font-family:'Great Vibes',cursive;
+font-size:50px;
+color:#000;
+margin:15px 0;
+}
+
+.card{
+background:#ededed;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.card p{
+margin:8px;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="box" id="inputNama">
+
+<h1>Undangan</h1>
+
+<p>Silakan masukkan nama kamu</p>
+
+<input type="text" id="namaInput" placeholder="Masukkan nama">
+
+<button onclick="bukaUndangan()">
+Buka Undangan
+</button>
+
+</div>
+
+
+<div class="box" id="undangan">
+
+<h1>You're Invited</h1>
+
+<p>Undangan spesial untuk</p>
+
+<div class="nama" id="namaTampil">
+Nama Kamu
+</div>
+
+<div class="card">
+
+<p>🎥 Debut Streaming 🎥</p>
+
+<p>Jangan lewatkan debut streaming spesial!</p>
+
+<p>📅 Tanggal : comongsoon</p>
+
+<p>⏰ Jam : 27.00 WIB</p>
+
+<p>🖥 Platform : Live Streaming</p>
+
+<p> Jangan lupa berak </p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function bukaUndangan(){
+
+let nama=document.getElementById("namaInput").value;
+
+if(nama==""){
+alert("Masukkan nama terlebih dahulu!");
+return;
+}
+
+document.getElementById("namaTampil").innerHTML=nama;
+
+document.getElementById("inputNama").style.display="none";
+
+document.getElementById("undangan").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
