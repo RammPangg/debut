@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Debut Invitation</title>
+
+<!-- Ganti link font lama -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Fredoka',sans-serif;
+background:#111;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+/* FORM INPUT */
+
+#formBox{
+width:350px;
+background:white;
+padding:25px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:15px;
+border:2px solid #ccc;
+outline:none;
+font-family:'Fredoka',sans-serif;
+font-size:16px;
+margin:15px 0;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:black;
+color:white;
+font-size:16px;
+font-family:'Fredoka',sans-serif;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* UNDANGAN */
+
+#invite{
+display:none;
+width:100%;
+max-width:1000px;
+position:relative;
+}
+
+.banner{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+}
+
+.banner img{
+width:100%;
+display:block;
+border-radius:20px;
+}
+
+/* KOLOM NAMA DEAR */
+
+.dearName{
+position:absolute;
+bottom:20%;
+right:4%;
+
+width:32%;
+height:9%;
+
+background:white;
+border-radius:50px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:0 15px;
+
+font-family:'Baloo 2',cursive; /* font bubble */
+font-size:clamp(20px,2vw,38px);
+font-weight:800;
+color:black;
+
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div id="formBox">
+
+<h2>Masukkan Nama</h2>
+
+<input
+type="text"
+id="namaInput"
+placeholder="Masukkan nama">
+
+<button onclick="bukaUndangan()">
+Buka Undangan
+</button>
+
+</div>
+
+
+
+<div id="invite">
+
+<div class="banner">
+
+<!-- GANTI NAMA FILE SESUAI GAMBAR -->
+<img src="debut.jpeg">
+
+<div class="dearName" id="namaHasil">
+Nama Kamu
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function bukaUndangan(){
+
+let nama=document.getElementById("namaInput").value.trim();
+
+if(nama===""){
+alert("Masukkan nama terlebih dahulu");
+return;
+}
+
+document.getElementById("namaHasil").innerText=nama;
+
+document.getElementById("formBox").style.display="none";
+
+document.getElementById("invite").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
